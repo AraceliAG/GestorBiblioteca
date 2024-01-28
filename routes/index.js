@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
+const librosController = require("../controller/librosController")
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Aplicacion con Node JS y Express XD ' }); //SE PUEDE CAMBIAR EL NOMBRE
-});
+router.get('/', librosController.index);
 
 module.exports = router;
