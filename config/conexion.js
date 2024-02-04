@@ -13,7 +13,7 @@ con.connect (
             console.log("CONEXION EXITOSA :D ")
 
         } else{
-            console.log("NO SE LOGRÓ ESTABLECER CONEXION")
+            console.log("NO SE LOGRÓ ESTABLECER CONEXION :C")
         }
     }
 );
