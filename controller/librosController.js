@@ -8,7 +8,8 @@ module.exports={
     
         libro.obtener(conexion, function(err, datos){
             console.log(datos);
-            res.render('libros/index', {title:'Aplication'});  /*SE VA PRIMERO A LA RUTA VISTA/LIBROS/INDEX)*/
+            /*SE CREA VARIABLE LIBROS QUE SON LOS DATOS*/
+            res.render('libros/index', {title:'Aplication', libros:datos});  /*SE VA PRIMERO A LA RUTA VISTA/LIBROS/INDEX)*/
     });
     
     }

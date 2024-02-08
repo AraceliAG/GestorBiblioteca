@@ -13,20 +13,25 @@
         <thead class="thead-light">
             <tr>
                 <th>#</th>
-                <th>ID</th>
                 <th>Nombre</th>
                 <th>Imagen</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>Editar | Borrar</td>
-            </tr>
+            <!-- SE GENERA VARIABLE LIBROS EL CUAL INICIARA DESDE 0 ES DECIR LEERA TODOS LOS REGISTROS 
+            Y ESTE LERRA LOS REGISTROS BD libros Y ESTE INCREMENTARA -->
+            <% for( let libro = 0; libro < libros.length; libro++ ) { %>
+
+                <tr>
+                    <!-- libros[libro].id = LIBRO ACTUAL SEGUIDO DEL ATRIBUTO DE LA BD -->
+                    <td><%=libros[libro].id%></td>
+                    <td><%=libros[libro].nombre%></td>
+                    <td><%=libros[libro].imagen%></td>
+                    <td>Editar | Borrar</td>
+                </tr>
+            
+            <% } %>
         </tbody>
     </table>
     
