@@ -1,10 +1,8 @@
 var express = require('express');
 var router = express.Router();
+const librosController = require("../controller/librosController")
 
-/*RUTA PRINCIPALL*/
 /* GET home page. */
-router.get('/', function(req, res, next){
-    res.send("BIENVENIDO")
-});
+router.get('/', librosController.index);
 
 module.exports = router;
