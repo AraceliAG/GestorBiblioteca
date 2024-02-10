@@ -8,19 +8,46 @@
 </head>
 <body>
     
-    <!-- CON b-table-header automaticamente se crea la siguiente tabala -->
+    <div class="container">
+        <br>
+        <br>
+        <!-- SE AGREGA BOTON CON b-btn CON LOS SIGUIENTES PARAMETROS -->
+        <!-- SE CAMBIA EL NOMBRE button POR a, CLASE primary -->
+        <!-- SE AGREGA href PARA DIRECCIONAR A OTRA PAGINA -->
+        <a href="/libros/crear" class="btn btn-primary" type="button">Agregar nuevo Libro</a>
+
+        <br>
+        <br>
+        <!-- CON b-table-header automaticamente se crea la siguiente tabala -->
     <table class="table table-light">
         <thead class="thead-light">
             <tr>
                 <th>#</th>
+                <th>Nombre</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-            </tr>
+            <!-- SE GENERA VARIABLE LIBROS EL CUAL INICIARA DESDE 0 ES DECIR LEERA TODOS LOS REGISTROS 
+            Y ESTE LERRA LOS REGISTROS BD libros Y ESTE INCREMENTARA -->
+            <% for( let libro = 0; libro < libros.length; libro++ ) { %>
+
+                <tr>
+                    <!-- libros[libro].id = LIBRO ACTUAL SEGUIDO DEL ATRIBUTO DE LA BD -->
+                    <td><%=libros[libro].id%></td>
+                    <td><%=libros[libro].nombre%></td>
+                    <td><%=libros[libro].imagen%></td>
+                    <td>Editar | Borrar</td>
+                </tr>
+            
+            <% } %>
         </tbody>
     </table>
+        
+    </div>
+    
+    
     
     
 </body>
