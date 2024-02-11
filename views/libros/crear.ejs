@@ -1,7 +1,7 @@
 <!-- SE CREA NUEVA VISTA PARA AGREGAR LIBROS -->
 <!-- SE AGREGA FORMULARIO CON b-form -->
-
-<form method="get" action="">
+<%- include ('../layouts/cabecera.ejs') %> <!-- AQUI HICIMOS REFERENCIA A LA CABECERA Y AL PIE CON LOS SIGUIENTES PARAMETROS -->
+<form method="post" action="/libros">
     <!-- SE AGREGA UN b-form-group -->
     <div class="form-group">
         <label for="my-input">Nombre:</label> <!--SE AGREGA UN NOMBRE AL LABEL-->
@@ -19,3 +19,4 @@
 
 </form>
 <!-- SE AGREGA A LA RUTA ESTE ARCHIVO PARA PODER VISUALIZARLO -->
+<%- include ('../layouts/pie.ejs') %>

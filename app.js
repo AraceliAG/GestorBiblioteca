@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser'); /*SE AGREGA UNA VARIABLE PARA bodyParser */
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
@@ -18,6 +19,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({extended:false})); /*OBTIENE TODA LA INFORMACION QUE LLEGA A TRAVEZ DE LA URL */
+app.use(bodyParser.json()); /*DEVUELVE LA INFORMACION QUE SE MANIPULA EN EL JSON*/
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
