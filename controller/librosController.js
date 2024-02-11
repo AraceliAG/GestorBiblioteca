@@ -18,6 +18,13 @@ module.exports={
     /*COMO TAL ES UNA INSTRUCCION O LO QUE SE EJECUTARA */
     crear:function(req, res){
         res.render('libros/crear');
+    },
+    /*SE CREA NUEVA FUNCION PARA GUARDAR LOS DATOS QUE SE ENVIAN DESDE EL FORMULARIO */
+    guardar:function(req,res){
+        /*SE INSTALA EL PAQUETE body-parse PARA ANALIZAR Y PROCESAR LOS DATOS S}DE SOLICITURDE HTTP COMO JSON O DATOS DEL FORMULARIO */
+        /*SE AGREGA EN EL ARCHIVO app.js Y DESPUES SE AGREGA LO SIGUIENTE: */
+        
+        res.send(req.body); /*IMPRIME LA INFORMACON QUE SE MANDA AL FORMULARIO */
     }
     
 }
