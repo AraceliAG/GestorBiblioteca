@@ -1,7 +1,8 @@
 <!-- SE CREA NUEVA VISTA PARA AGREGAR LIBROS -->
 <!-- SE AGREGA FORMULARIO CON b-form -->
 <%- include ('../layouts/cabecera.ejs') %> <!-- AQUI HICIMOS REFERENCIA A LA CABECERA Y AL PIE CON LOS SIGUIENTES PARAMETROS -->
-<form method="post" action="/libros">
+<!-- AQUI AGREGAMOS CODIGO PARA QUE FUNCIONE LO QUE HICIMOS PARA GUARDAR ARCHIVO -->
+<form method="post" action="/libros" enctype="multipart/form-data">
     <!-- SE AGREGA UN b-form-group -->
     <div class="form-group">
         <label for="my-input">Nombre:</label> <!--SE AGREGA UN NOMBRE AL LABEL-->
