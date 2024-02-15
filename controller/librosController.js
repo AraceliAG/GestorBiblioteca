@@ -1,4 +1,5 @@
 /*SE AGREGA INFORMACIÓN QUE PUEDE MANIPULAR TODOS LOS DATOS QUE SE ENCUENTRAN EN ROUTES*/
+const con = require("../config/conexion");
 var conexion = require("../config/conexion");
 var libro = require("../model/libro");
 
@@ -23,8 +24,12 @@ module.exports={
     guardar:function(req,res){
         /*SE INSTALA EL PAQUETE body-parse PARA ANALIZAR Y PROCESAR LOS DATOS S}DE SOLICITURDE HTTP COMO JSON O DATOS DEL FORMULARIO */
         /*SE AGREGA EN EL ARCHIVO app.js Y DESPUES SE AGREGA LO SIGUIENTE: */
-        
-        res.send(req.body); /*IMPRIME LA INFORMACON QUE SE MANDA AL FORMULARIO */
+        console.log(req.body); /*IMPRIME LA INFORMACON QUE SE MANDA AL FORMULARIO EN CONSOLA */
+        /*AQUI SE LLAMA A LA FUNCION INSERTAR EL CUAL LE PASARA UNA CONEXION Y DESPUES LOS DATOS CON EL req.body */
+        /*EL CUAL ERAN LOS DATOS QUE SE MANDABAN DESDE EL FORMULARIO, LA FUNCION REDICCIONARA DIRECTAMENTE A LA VISTA libro */
+        libro.insertar(conexion, req.body, function(err){
+                res.redirect('/libros');
+        });
     }
     
 }
