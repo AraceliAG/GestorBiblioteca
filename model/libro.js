@@ -8,8 +8,9 @@ module.exports = {
 
     /*SE CREA NUEVA FUNCION PARA INSERTAR DATOS */
 
-    insertar:function(conexion, datos, funcion){ /*SE AGREGA EL PARAMETRO DATOS YA QUE ESTARA ENVIANDO LOS QUE SON LOS DATOS req.body */
+    /*SE AGREGA EL PARAMETRO archivos EL CUAL ES EL ARCHIVO DE IMAGEN */
+    insertar:function(conexion, datos, archivos, funcion){ /*SE AGREGA EL PARAMETRO DATOS YA QUE ESTARA ENVIANDO LOS QUE SON LOS DATOS req.body */
         /*AQUI EN LOS CORCHETES SON LOS DATOS QUE ESTEN DENTRO DEL VIEW en el name DE CA ATRIBUTO QUE SE PIDE */
-        conexion.query("INSERT INTO libros (nombre, imagen) VALUES (?,?)", [datos.nombre, datos.archivo], funcion);
+        conexion.query("INSERT INTO libros (nombre, imagen) VALUES (?,?)", [datos.nombre, archivos.filename], funcion); /*SE AGREGA EL filename */
     }
 }

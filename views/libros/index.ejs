@@ -28,7 +28,13 @@
                     <!-- libros[libro].id = LIBRO ACTUAL SEGUIDO DEL ATRIBUTO DE LA BD -->
                     <td><%=libros[libro].id%></td>
                     <td><%=libros[libro].nombre%></td>
-                    <td><%=libros[libro].imagen%></td>
+                    
+                    <td>
+                        <!-- UTILIZAMOS EL b-img-thumbnail Y EN LA RUTA AGREGAMOS LO QUE TENIAMOS PERO cCON imges/ PARA ACCEDER A LA IMAGENES QUE SON PUBLICAS Y CONFIGURAMOS EL TAMAÑO -->
+                        <img class="img-thumbnail" width="100" src="images/<%=libros[libro].imagen%>" alt="">
+                        
+                    </td>
+
                     <td>Editar | Borrar</td>
                 </tr>
             

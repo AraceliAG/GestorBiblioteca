@@ -28,7 +28,7 @@ module.exports={
         console.log(req.file.filename); /*AQUI SE ADUNTA A LA CARPETA DE IMAGEN, SE GUARDA AL MOMENTO QUE LA FUNCION GUARDAR SE EJECUTE */
         /*AQUI SE LLAMA A LA FUNCION INSERTAR EL CUAL LE PASARA UNA CONEXION Y DESPUES LOS DATOS CON EL req.body */
         /*EL CUAL ERAN LOS DATOS QUE SE MANDABAN DESDE EL FORMULARIO, LA FUNCION REDICCIONARA DIRECTAMENTE A LA VISTA libro */
-        libro.insertar(conexion, req.body, function(err){
+        libro.insertar(conexion, req.body, req.file, function(err){ /*SE AGREGA EL PARAMETRO filename EL CUAL ERA LA ASIGNACION NUEVA DE NUESTRO ARCHIVO QUE SUBIMOS */
                 res.redirect('/libros');
         });
     }
