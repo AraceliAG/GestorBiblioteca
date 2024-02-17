@@ -4,7 +4,7 @@ var router = express.Router();
 /*RUTA PRINCIPALL*/
 /* GET home page. */
 router.get('/', function(req, res, next){
-    res.send("BIENVENIDO")
+    res.send("xd")
 });
 
 module.exports = router;

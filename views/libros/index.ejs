@@ -10,7 +10,7 @@
         <br>
         <br>
         <!-- CON b-table-header automaticamente se crea la siguiente tabala -->
-    <table class="table table-light">
+    <table class="table table-secondary" >
         <thead class="thead-light">
             <tr>
                 <th>#</th>
@@ -26,7 +26,7 @@
 
                 <tr>
                     <!-- libros[libro].id = LIBRO ACTUAL SEGUIDO DEL ATRIBUTO DE LA BD -->
-                    <td><%=libros[libro].id%></td>
+                    <td><%=libros[libro].id%></td> 
                     <td><%=libros[libro].nombre%></td>
 
                     <td>
@@ -35,7 +35,28 @@
                         
                     </td>
 
-                    <td>Editar | Borrar</td>
+                    <td> 
+
+                        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <form class="form-inline" method="post" action="/libros/editar/"<%=libros[libro].id%>> <!--AGREGAMOS EL METODO POST-- Y EN LA ACCION LE AGREGAMOS EL id CON RUTAS-->
+                                <!-- SE AGREGA EL BOTON -->
+                                <button class="btn btn-warning" type="submit">Editar</button>
+                            </form>
+                            
+                        </div>
+                        
+                        <!-- SE CREA  FORMULARIO Y BOTON CON, b-btn-group-vertical  b-form-inline, b-form-vertical y b-bt -->
+                        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <form class="form-inline" method="post" action="/libros/eliminar/"<%=libros[libro].id%>> <!--AGREGAMOS EL METODO POST-- Y EN LA ACCION LE AGREGAMOS EL id CON RUTAS-->
+                                <!-- SE AGREGA EL BOTON -->
+                                <button class="btn btn-danger" type="submit">Eliminar</button>
+                            </form>
+                            
+                        </div>
+                        
+
+
+                       </td>
                 </tr>
             
             <% } %>
