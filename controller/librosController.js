@@ -31,6 +31,10 @@ module.exports={
         libro.insertar(conexion, req.body, req.file, function(err){ /*SE AGREGA EL PARAMETRO filename EL CUAL ERA LA ASIGNACION NUEVA DE NUESTRO ARCHIVO QUE SUBIMOS */
                 res.redirect('/libros');
         });
+    },
+    eliminar:function(req, res){ /*SE CREA FUNCION BORRAR */
+        console.log("Recepcion de datos");
+        console.log(req.params.id);
     }
     
 }
