@@ -20,8 +20,9 @@ var cargar = multer({storage:rutaAlmacen});/*ELEMENTO PARA CARGAR NUESTRA IMAGEN
 router.get('/', librosController.index);
 router.get('/crear', librosController.crear); /*AQUI AGREGAMOS EL CONTROLADOR EL CUAL NOS DARA ACCESO AL ARCHIVO */
 /*SE MODIFICA EL POST  AGREGANDO EL cargar.single ES DECIR UN ARCHIVO */
-router.post("/",cargar.single("archivo"), librosController.guardar) /*AQUI SE RECEPCIONARA LOS DATOS QUE SE MANDEN DESDE EL ARCHIVO EJS*/
+router.post("/",cargar.single("archivo"), librosController.guardar); /*AQUI SE RECEPCIONARA LOS DATOS QUE SE MANDEN DESDE EL ARCHIVO EJS*/
 /*EL "/" ES DIRECTAMENTE DE LIBROS, IMPORTANTE */
+router.post('/eliminar/:id',librosController.eliminar);; /*SE CRA RUTA PARA LA RECEPCION DE DATOS EN ESTE CASO EL id DE NUESTRO ARCHIVO EJS*/
 
 
 module.exports = router;
