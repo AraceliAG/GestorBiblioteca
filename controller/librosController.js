@@ -35,6 +35,11 @@ module.exports={
     eliminar:function(req, res){ /*SE CREA FUNCION BORRAR */
         console.log("Recepcion de datos");
         console.log(req.params.id);
+        libro.retornarDatosID(conexion, req.params.id, function(err, registros){ /*SE LLAMA LA FUNCION CREADA EN EL MODELO */
+            var nombreImagen = "public/images/" + (registros[0].imagen); /*AQUI SE CREA VARIABLE DONDE OBTENDREMOS EL NNOMBRE DEL ARCHIVO */
+            res.send(nombreImagen); /*AQUI MUESTRA EL NOMBRE DEL ARCHIVO*/
+
+        });
     }
     
 }

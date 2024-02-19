@@ -12,5 +12,9 @@ module.exports = {
     insertar:function(conexion, datos, archivos, funcion){ /*SE AGREGA EL PARAMETRO DATOS YA QUE ESTARA ENVIANDO LOS QUE SON LOS DATOS req.body */
         /*AQUI EN LOS CORCHETES SON LOS DATOS QUE ESTEN DENTRO DEL VIEW en el name DE CA ATRIBUTO QUE SE PIDE */
         conexion.query("INSERT INTO libros (nombre, imagen) VALUES (?,?)", [datos.nombre, archivos.filename], funcion); /*SE AGREGA EL filename */
+    },
+
+    retornarDatosID:function(conexion,id, funcion){ /*CREAMOS ESTA FUNCION PARA RETORNAR LOS DATOS PROVINIENTES DEL ID SELECCIONADO*/
+        conexion.query("SELECT * FROM libros WHERE id=?",[id], funcion);
     }
 }
