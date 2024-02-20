@@ -2,6 +2,7 @@
 const con = require("../config/conexion");
 var conexion = require("../config/conexion");
 var libro = require("../model/libro");
+var borrar = require("fs"); /*USO DEL PAQUETE fs EL CUAL NOS AYUDARA AL BORRADO DEL ARCHIVO */
 
 module.exports={
 
@@ -37,6 +38,14 @@ module.exports={
         console.log(req.params.id);
         libro.retornarDatosID(conexion, req.params.id, function(err, registros){ /*SE LLAMA LA FUNCION CREADA EN EL MODELO */
             var nombreImagen = "public/images/" + (registros[0].imagen); /*AQUI SE CREA VARIABLE DONDE OBTENDREMOS EL NNOMBRE DEL ARCHIVO */
+            
+            /*VERIFICAMOS SI EL ARCHIVO EXISTE CON LA SIGUIENTE CONDICION */
+
+            if(borrar.existsSync(nombreImagen)){ /*SI EL NOMBRE DEL ARCHIVO EXISTE ENTONCES... */
+               borrar.unlinkSync(nombreImagen); /*BORRA EL ARCHIVO */                     
+
+            }
+            
             res.send(nombreImagen); /*AQUI MUESTRA EL NOMBRE DEL ARCHIVO*/
 
         });
